@@ -2,6 +2,12 @@ Creating-native-query-in-JPA
 ============================
 
 The purpose of java code fragment is to create a sql native query UNION statement. The senerio was, I have 3 types of account expenses namely, Paid, Prepaid and Accrued. All expenses needed to view from single interface, this implies that I need to use SQL UNION statement that was not provided by JPQL. To implememnt the native query, in the one of JPA entity class create JPA Native SQL ResultSet Mapping 
+      
+      
+      
+      
+      
+      
         @SqlResultSetMapping(name="resolution", 
         columns={@ColumnResult(name="PDATE"), @ColumnResult(name="ID"), @ColumnResult(name="TYPES")})
         @NamedNativeQueries({@NamedNativeQuery(name="ExpensesResolution", query="SELECT c.invoiceDate AS PDATE, b.expensesInvoiceId AS ID, c.dtype AS TYPES FROM PaidExpensesInvoice b, ExpensesInvoice c " +
