@@ -28,6 +28,8 @@ The purpose of java code fragment is to create a sql native query UNION statemen
         })
 
 This methods inside EJB stateless bean uses the native query 
+
+
     public byte[] expensesResolutions(String datefrom, String dateto){ 
         Query query = em.createNamedQuery("ExpensesResolution");
         query.setParameter(1, java.sql.Date.valueOf(datefrom));
