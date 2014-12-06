@@ -1,7 +1,7 @@
 Creating-native-query-in-JPA
 ============================
 
-The purpose of java code fragment is to create a sql native query UNION statement. The senerio was, I have 3 types of account expenses namely, Paid, Prepaid and Accrued. All expenses needed to view from single interface, this implies that I need to use SQL UNION statement that was not provided by JPQL. To implememnt the native query, in the one of JPA entity class create JPA Native SQL ResultSet Mapping 
+The purpose of these java code fragment is to create a sql native query UNION statement. The senerio was, I have 3 types of account expenses namely, Paid, Prepaid and Accrued. All expenses needed to view from single interface, this implies that I need to use SQL UNION statement that was not provided by JPQL. To implememnt the native query, in the one of JPA entity class create JPA Native SQL ResultSet Mapping 
       
       
       
@@ -27,7 +27,7 @@ The purpose of java code fragment is to create a sql native query UNION statemen
         "WHERE a.expensesInvoiceId = d.expensesInvoiceId AND p.expensesInvoiceId = d.expensesInvoiceId AND a.paymentDate BETWEEN ?1 AND ?2 AND p.invoiceNumber = ?3 ORDER BY PDATE DESC", resultSetMapping="resolution")
         })
 
-This methods inside EJB stateless bean uses the native query 
+These methods inside EJB stateless bean uses the native query 
 
 
     public byte[] expensesResolutions(String datefrom, String dateto){ 
